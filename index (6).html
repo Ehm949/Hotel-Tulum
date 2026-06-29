@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Villa Solná — Casa privada en Tulum</title>
+<meta name="description" content="Villa Solná: una casa privada de lujo en la selva de Tulum. Renta completa, exclusiva, para una sola reserva a la vez.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500&family=Outfit:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#1c1a16;
+  --jungle:#26352b;
+  --moss:#3d5443;
+  --sand:#e9e1d3;
+  --bone:#f4efe6;
+  --clay:#b56a4a;
+  --gold:#c9a86a;
+  --line:rgba(28,26,22,.14);
+  --display:'Fraunces',serif;
+  --body:'Outfit',sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  font-family:var(--body);
+  background:var(--bone);
+  color:var(--ink);
+  font-weight:300;
+  line-height:1.7;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+.wrap{max-width:1180px;margin:0 auto;padding:0 clamp(20px,5vw,56px)}
+
+/* ---------- NAV ---------- */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:22px clamp(20px,5vw,56px);
+  mix-blend-mode:difference;color:#fff;
+}
+nav .brand{font-family:var(--display);font-size:21px;letter-spacing:.06em;font-weight:400}
+nav .brand span{font-style:italic;font-weight:300}
+nav .navlink{font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:#fff;text-decoration:none;opacity:.85}
+nav .navlink:hover{opacity:1}
+@media(max-width:680px){nav .navlink{display:none}}
+
+/* ---------- HERO ---------- */
+.hero{
+  position:relative;min-height:100vh;
+  display:flex;flex-direction:column;justify-content:flex-end;
+  padding-bottom:clamp(48px,9vh,110px);
+  color:#f4efe6;overflow:hidden;
+}
+.hero-bg{position:absolute;inset:0;z-index:0}
+.hero-bg svg{width:100%;height:100%;object-fit:cover}
+.hero-grain{position:absolute;inset:0;z-index:1;opacity:.5;
+  background:linear-gradient(180deg,rgba(20,28,22,.55) 0%,rgba(20,28,22,.15) 38%,rgba(20,28,22,.78) 100%);}
+.hero .wrap{position:relative;z-index:2;width:100%}
+.eyebrow{
+  font-size:12px;letter-spacing:.34em;text-transform:uppercase;
+  display:flex;align-items:center;gap:14px;margin-bottom:26px;opacity:.92;
+}
+.eyebrow::before{content:"";width:42px;height:1px;background:var(--gold)}
+.hero h1{
+  font-family:var(--display);font-weight:300;
+  font-size:clamp(48px,9vw,116px);line-height:.94;letter-spacing:-.02em;
+}
+.hero h1 em{font-style:italic;color:var(--gold)}
+.hero-sub{
+  margin-top:28px;max-width:430px;font-size:clamp(15px,1.5vw,17px);
+  font-weight:300;opacity:.9;line-height:1.6;
+}
+.hero-meta{
+  margin-top:42px;display:flex;flex-wrap:wrap;gap:34px;align-items:baseline;
+  padding-top:26px;border-top:1px solid rgba(244,239,230,.25);
+}
+.hero-meta .stat .n{font-family:var(--display);font-size:25px;font-weight:400}
+.hero-meta .stat .l{font-size:11px;letter-spacing:.18em;text-transform:uppercase;opacity:.75;margin-top:2px}
+.scrollcue{position:absolute;bottom:30px;left:50%;transform:translateX(-50%);z-index:2;
+  font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#f4efe6;opacity:.7;
+  display:flex;flex-direction:column;align-items:center;gap:8px}
+.scrollcue .bar{width:1px;height:38px;background:linear-gradient(var(--gold),transparent);animation:drop 2.4s ease-in-out infinite}
+@keyframes drop{0%,100%{transform:scaleY(.4);transform-origin:top}50%{transform:scaleY(1);transform-origin:top}}
+
+/* ---------- INTRO ---------- */
+.intro{padding:clamp(80px,12vw,150px) 0}
+.intro-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(40px,7vw,100px);align-items:center}
+@media(max-width:840px){.intro-grid{grid-template-columns:1fr;gap:48px}}
+.intro .label{font-size:12px;letter-spacing:.26em;text-transform:uppercase;color:var(--clay);margin-bottom:24px}
+.intro h2{font-family:var(--display);font-weight:300;font-size:clamp(30px,4.4vw,52px);line-height:1.08;letter-spacing:-.01em;color:var(--jungle)}
+.intro h2 em{font-style:italic;color:var(--clay)}
+.intro p{margin-top:24px;font-size:16px;color:#43413a;max-width:46ch}
+.intro p + p{margin-top:16px}
+.intro-art{position:relative;aspect-ratio:4/5;border-radius:3px;overflow:hidden;background:var(--moss)}
+.intro-art svg{width:100%;height:100%;display:block}
+
+/* ---------- FEATURES ---------- */
+.features{padding:clamp(60px,9vw,110px) 0;background:var(--jungle);color:var(--bone)}
+.features .head{display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:24px;margin-bottom:64px}
+.features h3{font-family:var(--display);font-weight:300;font-size:clamp(28px,4vw,46px);line-height:1.05}
+.features h3 em{font-style:italic;color:var(--gold)}
+.features .head p{font-size:14px;opacity:.7;max-width:30ch}
+.feat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(244,239,230,.16)}
+@media(max-width:760px){.feat-grid{grid-template-columns:1fr}}
+.feat{background:var(--jungle);padding:40px 32px;transition:background .4s}
+.feat:hover{background:var(--moss)}
+.feat .fn{font-family:var(--display);font-size:13px;color:var(--gold);letter-spacing:.1em}
+.feat h4{font-family:var(--display);font-weight:400;font-size:23px;margin:18px 0 12px;font-style:italic}
+.feat p{font-size:14px;opacity:.78;line-height:1.65}
+
+/* ---------- GALLERY STRIP ---------- */
+.strip{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:1px;background:var(--bone)}
+@media(max-width:760px){.strip{grid-template-columns:1fr 1fr}.strip>div:first-child{grid-column:1/-1}}
+.strip>div{aspect-ratio:3/2.4;overflow:hidden;position:relative}
+.strip svg{width:100%;height:100%;display:block}
+
+/* ---------- BOOKING ---------- */
+.booking{padding:clamp(80px,12vw,150px) 0}
+.booking-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(40px,6vw,80px);align-items:start}
+@media(max-width:900px){.booking-grid{grid-template-columns:1fr;gap:48px}}
+.booking .label{font-size:12px;letter-spacing:.26em;text-transform:uppercase;color:var(--clay);margin-bottom:22px}
+.booking h2{font-family:var(--display);font-weight:300;font-size:clamp(32px,4.6vw,54px);line-height:1.04;color:var(--jungle);letter-spacing:-.01em}
+.booking h2 em{font-style:italic;color:var(--clay)}
+.booking .lead{margin-top:22px;font-size:16px;color:#43413a;max-width:42ch}
+.rate{margin-top:34px;padding-top:26px;border-top:1px solid var(--line);display:flex;align-items:baseline;gap:12px}
+.rate .amt{font-family:var(--display);font-size:clamp(34px,5vw,52px);font-weight:400;color:var(--jungle)}
+.rate .per{font-size:14px;color:#6b6960;letter-spacing:.05em}
+.rate .note{font-size:12.5px;color:#8a887e;margin-top:6px}
+
+/* calendar card */
+.cal-card{background:#fff;border:1px solid var(--line);border-radius:4px;padding:clamp(22px,3vw,32px);box-shadow:0 30px 60px -40px rgba(38,53,43,.4)}
+.cal-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:20px}
+.cal-top .mo{font-family:var(--display);font-size:21px;color:var(--jungle);font-weight:400}
+.cal-nav{display:flex;gap:8px}
+.cal-nav button{width:36px;height:36px;border:1px solid var(--line);background:#fff;border-radius:50%;cursor:pointer;font-size:15px;color:var(--jungle);display:flex;align-items:center;justify-content:center;transition:all .25s}
+.cal-nav button:hover{background:var(--jungle);color:#fff;border-color:var(--jungle)}
+.cal-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:4px}
+.cal-grid .dow{font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;text-align:center;color:#a3a096;padding:6px 0 10px;font-weight:400}
+.cal-day{aspect-ratio:1;display:flex;align-items:center;justify-content:center;font-size:14px;border-radius:50%;cursor:pointer;position:relative;transition:all .18s;color:var(--ink)}
+.cal-day.empty{cursor:default}
+.cal-day.past{color:#cdcabf;cursor:not-allowed;text-decoration:line-through}
+.cal-day.booked{color:#cb7a5e;cursor:not-allowed}
+.cal-day.booked::after{content:"";position:absolute;bottom:5px;width:4px;height:4px;border-radius:50%;background:#cb7a5e}
+.cal-day.selectable:hover{background:var(--sand)}
+.cal-day.sel{background:var(--jungle);color:#fff}
+.cal-day.inrange{background:var(--sand);border-radius:0}
+.cal-day.rangestart{background:var(--jungle);color:#fff;border-radius:50% 0 0 50%}
+.cal-day.rangeend{background:var(--jungle);color:#fff;border-radius:0 50% 50% 0}
+.cal-legend{display:flex;gap:18px;margin-top:18px;flex-wrap:wrap}
+.cal-legend span{font-size:11.5px;color:#8a887e;display:flex;align-items:center;gap:6px}
+.cal-legend i{width:9px;height:9px;border-radius:50%;display:inline-block}
+
+.cal-summary{margin-top:22px;padding-top:20px;border-top:1px solid var(--line)}
+.cal-summary .row{display:flex;justify-content:space-between;font-size:14px;margin-bottom:9px;color:#43413a}
+.cal-summary .row.total{font-family:var(--display);font-size:18px;color:var(--jungle);padding-top:9px;margin-top:4px;border-top:1px solid var(--line)}
+.cal-summary .row.total span:last-child{font-weight:500}
+.guests{display:flex;align-items:center;justify-content:space-between;margin:16px 0 4px;font-size:14px;color:#43413a}
+.guests .stepper{display:flex;align-items:center;gap:14px}
+.guests button{width:30px;height:30px;border:1px solid var(--line);background:#fff;border-radius:50%;cursor:pointer;font-size:16px;color:var(--jungle);display:flex;align-items:center;justify-content:center}
+.guests button:hover{background:var(--sand)}
+.guests .gnum{min-width:20px;text-align:center;font-size:15px}
+.cta{display:block;width:100%;margin-top:22px;padding:17px;background:var(--clay);color:#fff;border:none;border-radius:3px;font-family:var(--body);font-size:13px;letter-spacing:.16em;text-transform:uppercase;cursor:pointer;transition:background .3s}
+.cta:hover{background:#9c5739}
+.cta:disabled{background:#d9cfc2;cursor:not-allowed;color:#fff}
+.cta-hint{text-align:center;font-size:12px;color:#8a887e;margin-top:12px}
+.wa-ic{vertical-align:-2px;margin-right:8px}
+
+/* ---------- FOOTER ---------- */
+footer{background:var(--ink);color:#cfc9bd;padding:clamp(60px,9vw,100px) 0 40px}
+.foot-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:40px}
+@media(max-width:760px){.foot-grid{grid-template-columns:1fr;gap:32px}}
+footer .fbrand{font-family:var(--display);font-size:30px;color:var(--bone);font-weight:300}
+footer .fbrand span{font-style:italic}
+footer p{font-size:14px;opacity:.7;margin-top:16px;max-width:34ch}
+footer h5{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:16px}
+footer a{color:#cfc9bd;text-decoration:none;font-size:14px;display:block;margin-bottom:9px;opacity:.8}
+footer a:hover{opacity:1;color:#fff}
+.foot-base{margin-top:56px;padding-top:24px;border-top:1px solid rgba(244,239,230,.14);display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;font-size:12px;opacity:.55}
+
+.reveal{opacity:0;transform:translateY(26px);transition:opacity .9s cubic-bezier(.2,.7,.2,1),transform .9s cubic-bezier(.2,.7,.2,1)}
+.reveal.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}.scrollcue .bar{animation:none}}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="brand">Villa <span>Solná</span></div>
+  <a href="#reservar" class="navlink">Reservar</a>
+</nav>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="hero-bg" aria-hidden="true">
+    <svg viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stop-color="#2a3b30"/><stop offset="0.5" stop-color="#3d5443"/><stop offset="1" stop-color="#1e2a22"/>
+        </linearGradient>
+        <linearGradient id="water" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stop-color="#4a6b5c"/><stop offset="1" stop-color="#2c4239"/>
+        </linearGradient>
+        <radialGradient id="sun" cx="0.72" cy="0.28" r="0.4">
+          <stop offset="0" stop-color="#e9d6a8" stop-opacity="0.55"/><stop offset="1" stop-color="#e9d6a8" stop-opacity="0"/>
+        </radialGradient>
+      </defs>
+      <rect width="1440" height="900" fill="url(#sky)"/>
+      <rect width="1440" height="900" fill="url(#sun)"/>
+      <!-- canopy silhouettes -->
+      <g fill="#1c2a20" opacity="0.9">
+        <path d="M0 640 Q180 600 360 630 T720 620 T1080 635 T1440 615 L1440 900 L0 900 Z"/>
+      </g>
+      <!-- villa pool -->
+      <rect x="430" y="700" width="580" height="120" rx="6" fill="url(#water)" opacity="0.85"/>
+      <g stroke="#5e8071" stroke-width="1" opacity="0.4">
+        <line x1="470" y1="730" x2="970" y2="730"/><line x1="470" y1="760" x2="970" y2="760"/><line x1="470" y1="790" x2="970" y2="790"/>
+      </g>
+      <!-- palms -->
+      <g stroke="#16201a" stroke-width="7" fill="none" stroke-linecap="round" opacity="0.92">
+        <path d="M210 690 Q200 560 215 470"/>
+        <path d="M1240 700 Q1255 560 1235 460"/>
+      </g>
+      <g fill="#1a261d" opacity="0.92">
+        <path d="M215 470 Q150 440 110 460 Q165 470 215 488 Q160 500 130 520 Q185 500 218 500 Q250 470 300 470 Q250 458 215 470Z"/>
+        <path d="M1235 460 Q1300 432 1340 452 Q1285 462 1235 480 Q1295 492 1325 512 Q1268 492 1232 492 Q1200 462 1150 462 Q1200 450 1235 460Z"/>
+      </g>
+      <!-- architectural line -->
+      <g opacity="0.5" stroke="#c9a86a" stroke-width="1.5">
+        <line x1="430" y1="688" x2="1010" y2="688"/>
+      </g>
+    </svg>
+  </div>
+  <div class="hero-grain"></div>
+  <div class="wrap">
+    <div class="eyebrow">Tulum &middot; Quintana Roo</div>
+    <h1>La casa<br>es <em>tuya</em>.<br>Toda.</h1>
+    <p class="hero-sub">Una residencia privada en la selva, a unos pasos de la costa. Se renta completa, para una sola reserva a la vez. Sin vecinos, sin lobby, sin nadie más.</p>
+    <div class="hero-meta">
+      <div class="stat"><div class="n">6</div><div class="l">Recámaras</div></div>
+      <div class="stat"><div class="n">12</div><div class="l">Huéspedes</div></div>
+      <div class="stat"><div class="n">1</div><div class="l">Reserva a la vez</div></div>
+      <div class="stat"><div class="n">2,200 m²</div><div class="l">De terreno</div></div>
+    </div>
+  </div>
+  <div class="scrollcue"><span>Descubre</span><div class="bar"></div></div>
+</header>
+
+<!-- INTRO -->
+<section class="intro">
+  <div class="wrap">
+    <div class="intro-grid">
+      <div class="reveal">
+        <div class="label">La residencia</div>
+        <h2>Diseñada para <em>desaparecer</em> del mundo unos días.</h2>
+        <p>Villa Solná no es un hotel. Es una casa de arquitectura maya contemporánea, construida con piedra caliza local, madera de chukum y techos de palapa, rodeada de selva en uno de los tramos más tranquilos de Tulum.</p>
+        <p>Reservas la propiedad entera: la alberca, la cocina abierta, el rooftop con vista al dosel y un equipo de casa que se mantiene invisible hasta que lo necesitas.</p>
+      </div>
+      <div class="intro-art reveal" aria-hidden="true">
+        <svg viewBox="0 0 600 750" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="ig" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#4f6a59"/><stop offset="1" stop-color="#2a3b31"/></linearGradient>
+          </defs>
+          <rect width="600" height="750" fill="url(#ig)"/>
+          <!-- stone house facade -->
+          <rect x="90" y="300" width="420" height="320" fill="#d6c6a8"/>
+          <rect x="90" y="300" width="420" height="46" fill="#c2b094"/>
+          <!-- palapa roof -->
+          <path d="M60 300 L300 170 L540 300 Z" fill="#7c5a36"/>
+          <path d="M60 300 L300 170 L540 300 Z" fill="none" stroke="#5e4326" stroke-width="2" opacity="0.5"/>
+          <g stroke="#6b4d2c" stroke-width="1.5" opacity="0.55">
+            <line x1="120" y1="300" x2="300" y2="205"/><line x1="180" y1="300" x2="300" y2="235"/><line x1="240" y1="300" x2="300" y2="262"/>
+            <line x1="480" y1="300" x2="300" y2="205"/><line x1="420" y1="300" x2="300" y2="235"/><line x1="360" y1="300" x2="300" y2="262"/>
+          </g>
+          <!-- doorways -->
+          <rect x="150" y="400" width="80" height="220" rx="40" fill="#2f4036"/>
+          <rect x="370" y="400" width="80" height="220" rx="40" fill="#2f4036"/>
+          <rect x="270" y="440" width="60" height="180" fill="#3a4f42"/>
+          <!-- pool foreground -->
+          <rect x="0" y="640" width="600" height="110" fill="#3f6557"/>
+          <g stroke="#5e8071" stroke-width="1.5" opacity="0.4"><line x1="40" y1="675" x2="560" y2="675"/><line x1="40" y1="710" x2="560" y2="710"/></g>
+          <!-- plants -->
+          <g fill="#1f2e24"><ellipse cx="60" cy="430" rx="55" ry="120"/><ellipse cx="545" cy="440" rx="50" ry="110"/></g>
+        </svg>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURES -->
+<section class="features">
+  <div class="wrap">
+    <div class="head reveal">
+      <h3>Todo lo que incluye<br>tu <em>estancia privada</em></h3>
+      <p>Una tarifa, la casa completa y un servicio que se siente personal sin ser intrusivo.</p>
+    </div>
+    <div class="feat-grid reveal">
+      <div class="feat"><div class="fn">01</div><h4>Alberca infinita</h4><p>Borde infinito orientado a la selva, climatizada, con camastros y sombra de palapa para las horas de calor.</p></div>
+      <div class="feat"><div class="fn">02</div><h4>Chef privado</h4><p>Desayunos incluidos y la opción de cenas de autor con producto local de la región, a coordinar con el equipo de casa.</p></div>
+      <div class="feat"><div class="fn">03</div><h4>Rooftop al dosel</h4><p>Terraza superior sobre las copas de los árboles, pensada para el atardecer, el mezcal y el silencio.</p></div>
+      <div class="feat"><div class="fn">04</div><h4>Seis recámaras</h4><p>Cada una con baño propio, aire acondicionado, ropa de cama de lino y vista a jardín o selva.</p></div>
+      <div class="feat"><div class="fn">05</div><h4>Concierge 24/7</h4><p>Reservas de restaurantes, traslados desde Cancún o Tulum, tours a cenotes y experiencias privadas.</p></div>
+      <div class="feat"><div class="fn">06</div><h4>Privacidad total</h4><p>Una sola reserva a la vez. Mientras la casa es tuya, nadie más pisa la propiedad.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY STRIP -->
+<div class="strip" aria-hidden="true">
+  <div><svg viewBox="0 0 600 480" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg"><rect width="600" height="480" fill="#3d5443"/><rect x="0" y="300" width="600" height="180" fill="#33493d"/><circle cx="430" cy="130" r="60" fill="#c9a86a" opacity="0.25"/><g stroke="#26352b" stroke-width="6" fill="none" stroke-linecap="round"><path d="M120 360 Q110 230 130 150"/></g><path d="M130 150 Q70 124 36 146 Q92 156 132 172 Q80 186 52 206 Q104 186 134 186Z" fill="#26352b"/></svg></div>
+  <div><svg viewBox="0 0 400 480" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg"><rect width="400" height="480" fill="#d6c6a8"/><rect x="60" y="120" width="280" height="300" rx="6" fill="#3f6557"/><g stroke="#5e8071" stroke-width="2" opacity="0.5"><line x1="90" y1="200" x2="310" y2="200"/><line x1="90" y1="270" x2="310" y2="270"/><line x1="90" y1="340" x2="310" y2="340"/></g></svg></div>
+  <div><svg viewBox="0 0 400 480" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg"><rect width="400" height="480" fill="#2a3b31"/><rect x="70" y="70" width="260" height="340" fill="#7c5a36" opacity="0.85"/><rect x="110" y="150" width="180" height="220" rx="90" fill="#1f2e24"/><circle cx="200" cy="110" r="18" fill="#c9a86a" opacity="0.5"/></svg></div>
+</div>
+
+<!-- BOOKING -->
+<section class="booking" id="reservar">
+  <div class="wrap">
+    <div class="booking-grid">
+      <div class="reveal">
+        <div class="label">Disponibilidad</div>
+        <h2>Elige tus <em>noches</em>.</h2>
+        <p class="lead">Selecciona las fechas de llegada y salida en el calendario. Te preparamos una solicitud por WhatsApp con el detalle de tu estancia; nuestro equipo confirma disponibilidad y los siguientes pasos.</p>
+        <div class="rate">
+          <div>
+            <div><span class="amt">$90,000</span> <span class="per">MXN / noche</span></div>
+            <div class="note">La casa completa &middot; mínimo 2 noches &middot; desayunos incluidos</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="cal-card reveal">
+        <div class="cal-top">
+          <div class="mo" id="calMonth">—</div>
+          <div class="cal-nav">
+            <button id="prevMo" aria-label="Mes anterior">‹</button>
+            <button id="nextMo" aria-label="Mes siguiente">›</button>
+          </div>
+        </div>
+        <div class="cal-grid" id="calGrid"></div>
+        <div class="cal-legend">
+          <span><i style="background:var(--jungle)"></i>Seleccionado</span>
+          <span><i style="background:#cb7a5e"></i>No disponible</span>
+        </div>
+
+        <div class="guests">
+          <span>Huéspedes</span>
+          <div class="stepper">
+            <button id="gMinus" aria-label="Menos huéspedes">−</button>
+            <span class="gnum" id="gNum">2</span>
+            <button id="gPlus" aria-label="Más huéspedes">+</button>
+          </div>
+        </div>
+
+        <div class="cal-summary">
+          <div class="row"><span id="sumNights">Llegada — Salida</span><span id="sumDates"></span></div>
+          <div class="row"><span id="sumCalc">— noches × $90,000</span><span id="sumSub"></span></div>
+          <div class="row total"><span>Total estimado</span><span id="sumTotal">—</span></div>
+        </div>
+
+        <button class="cta" id="waBtn" disabled>
+          <svg class="wa-ic" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M12 2a10 10 0 0 0-8.7 14.9L2 22l5.3-1.4A10 10 0 1 0 12 2Zm0 18a8 8 0 0 1-4.1-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8 8 0 1 1 12 20Zm4.4-6c-.2-.1-1.4-.7-1.6-.8s-.4-.1-.5.1-.6.8-.8 1-.3.2-.5.1a6.5 6.5 0 0 1-1.9-1.2 7.3 7.3 0 0 1-1.4-1.7c-.1-.2 0-.4.1-.5l.4-.4.2-.4a.4.4 0 0 0 0-.4l-.8-1.8c-.2-.5-.4-.4-.5-.4h-.5a.9.9 0 0 0-.7.3 2.8 2.8 0 0 0-.9 2.1 4.9 4.9 0 0 0 1 2.6 11.2 11.2 0 0 0 4.3 3.8c.6.3 1.1.4 1.5.5a3.5 3.5 0 0 0 1.6.1c.5-.1 1.4-.6 1.6-1.1s.2-1 .1-1.1l-.4-.2Z"/></svg>
+          Solicitar por WhatsApp
+        </button>
+        <p class="cta-hint">Selecciona llegada y salida para continuar</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <div class="fbrand">Villa <span>Solná</span></div>
+        <p>Residencia privada de renta completa en la selva de Tulum, Quintana Roo, México.</p>
+      </div>
+      <div>
+        <h5>Contacto</h5>
+        <a href="https://wa.me/5215555555555" target="_blank" rel="noopener">WhatsApp directo</a>
+        <a href="mailto:reservas@villasolna.mx">reservas@villasolna.mx</a>
+      </div>
+      <div>
+        <h5>La casa</h5>
+        <a href="#reservar">Disponibilidad</a>
+        <a href="#">Tulum, Quintana Roo</a>
+      </div>
+    </div>
+    <div class="foot-base">
+      <span>© 2026 Villa Solná. Sitio de demostración.</span>
+      <span>Tulum &middot; México</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+/* ====== CONFIG (edita aquí) ====== */
+const CONFIG = {
+  hotelName: "Villa Solná",
+  whatsapp: "5215555555555",   // número del hotel con código de país, sin signos
+  ratePerNight: 90000,
+  minNights: 2,
+  currency: "MXN",
+  // fechas no disponibles de ejemplo (YYYY-MM-DD)
+  booked: ["2026-07-04","2026-07-05","2026-07-06","2026-07-18","2026-07-19","2026-08-09","2026-08-10","2026-08-11"]
+};
+
+/* ====== CALENDAR ====== */
+const MONTHS=["Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre"];
+const DOW=["Do","Lu","Ma","Mi","Ju","Vi","Sá"];
+let view=new Date(); view.setDate(1);
+let checkIn=null, checkOut=null, guests=2;
+const today=new Date(); today.setHours(0,0,0,0);
+
+const fmtKey=d=>d.toISOString().slice(0,10);
+const fmtNice=d=>d.toLocaleDateString('es-MX',{day:'numeric',month:'short'});
+const money=n=>'$'+n.toLocaleString('es-MX');
+
+function render(){
+  document.getElementById('calMonth').textContent=MONTHS[view.getMonth()]+" "+view.getFullYear();
+  const grid=document.getElementById('calGrid');
+  grid.innerHTML='';
+  DOW.forEach(d=>{const e=document.createElement('div');e.className='dow';e.textContent=d;grid.appendChild(e);});
+  const first=new Date(view.getFullYear(),view.getMonth(),1).getDay();
+  const days=new Date(view.getFullYear(),view.getMonth()+1,0).getDate();
+  for(let i=0;i<first;i++){const e=document.createElement('div');e.className='cal-day empty';grid.appendChild(e);}
+  for(let d=1;d<=days;d++){
+    const date=new Date(view.getFullYear(),view.getMonth(),d);
+    const key=fmtKey(date);
+    const cell=document.createElement('div');
+    cell.className='cal-day';cell.textContent=d;
+    if(date<today){cell.classList.add('past');}
+    else if(CONFIG.booked.includes(key)){cell.classList.add('booked');}
+    else{
+      cell.classList.add('selectable');
+      if(checkIn&&key===fmtKey(checkIn))cell.classList.add('sel','rangestart');
+      if(checkOut&&key===fmtKey(checkOut))cell.classList.add('sel','rangeend');
+      if(checkIn&&checkOut&&date>checkIn&&date<checkOut)cell.classList.add('inrange');
+      cell.addEventListener('click',()=>pick(date));
+    }
+    grid.appendChild(cell);
+  }
+  updateSummary();
+}
+
+function pick(date){
+  if(!checkIn||(checkIn&&checkOut)){checkIn=date;checkOut=null;}
+  else if(date>checkIn){
+    // ensure no booked night falls in between
+    let bad=false;let c=new Date(checkIn);
+    while(c<date){if(CONFIG.booked.includes(fmtKey(c))){bad=true;break;}c.setDate(c.getDate()+1);}
+    if(bad){checkIn=date;checkOut=null;}
+    else{checkOut=date;}
+  }else{checkIn=date;checkOut=null;}
+  render();
+}
+
+function nights(){if(!checkIn||!checkOut)return 0;return Math.round((checkOut-checkIn)/86400000);}
+
+function updateSummary(){
+  const n=nights();
+  const sumDates=document.getElementById('sumDates');
+  const sumNights=document.getElementById('sumNights');
+  const sumCalc=document.getElementById('sumCalc');
+  const sumSub=document.getElementById('sumSub');
+  const sumTotal=document.getElementById('sumTotal');
+  const btn=document.getElementById('waBtn');
+  const hint=document.querySelector('.cta-hint');
+
+  if(checkIn&&checkOut){
+    sumNights.textContent="Llegada — Salida";
+    sumDates.textContent=fmtNice(checkIn)+" → "+fmtNice(checkOut);
+    const sub=n*CONFIG.ratePerNight;
+    sumCalc.textContent=n+(n===1?" noche":" noches")+" × "+money(CONFIG.ratePerNight);
+    sumSub.textContent=money(sub);
+    sumTotal.textContent=money(sub);
+    if(n<CONFIG.minNights){
+      btn.disabled=true;
+      hint.textContent="Estancia mínima de "+CONFIG.minNights+" noches";
+    }else{
+      btn.disabled=false;
+      hint.textContent="Te llevará a WhatsApp con tu solicitud lista";
+    }
+  }else if(checkIn&&!checkOut){
+    sumDates.textContent=fmtNice(checkIn)+" → …";
+    sumNights.textContent="Llegada — Salida";
+    sumCalc.textContent="Selecciona la fecha de salida";
+    sumSub.textContent="";
+    sumTotal.textContent="—";
+    btn.disabled=true;hint.textContent="Selecciona la fecha de salida";
+  }else{
+    sumDates.textContent="";sumNights.textContent="Llegada — Salida";
+    sumCalc.textContent="— noches × "+money(CONFIG.ratePerNight);
+    sumSub.textContent="";sumTotal.textContent="—";
+    btn.disabled=true;hint.textContent="Selecciona llegada y salida para continuar";
+  }
+}
+
+document.getElementById('prevMo').onclick=()=>{view.setMonth(view.getMonth()-1);render();};
+document.getElementById('nextMo').onclick=()=>{view.setMonth(view.getMonth()+1);render();};
+document.getElementById('gPlus').onclick=()=>{if(guests<12){guests++;document.getElementById('gNum').textContent=guests;}};
+document.getElementById('gMinus').onclick=()=>{if(guests>1){guests--;document.getElementById('gNum').textContent=guests;}};
+
+document.getElementById('waBtn').onclick=()=>{
+  if(!checkIn||!checkOut)return;
+  const n=nights();const total=n*CONFIG.ratePerNight;
+  const msg=
+`Hola, me interesa reservar ${CONFIG.hotelName} 🌴
+
+• Llegada: ${checkIn.toLocaleDateString('es-MX',{weekday:'long',day:'numeric',month:'long',year:'numeric'})}
+• Salida: ${checkOut.toLocaleDateString('es-MX',{weekday:'long',day:'numeric',month:'long',year:'numeric'})}
+• Noches: ${n}
+• Huéspedes: ${guests}
+• Total estimado: ${money(total)} ${CONFIG.currency}
+
+¿Me confirman disponibilidad y los siguientes pasos? Gracias.`;
+  window.open(`https://wa.me/${CONFIG.whatsapp}?text=${encodeURIComponent(msg)}`,'_blank');
+};
+
+render();
+
+/* ====== REVEAL ON SCROLL ====== */
+const io=new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});
+},{threshold:0.14});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>
